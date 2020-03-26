@@ -1,7 +1,11 @@
 import React from "react";
-import CardBtn from "../CardBtn"
+
 
 function ProductCard(props) {
+   const handleClick = event => {
+       console.log(`Part Number: ${props.number}`)
+       console.log(`Price: ${props.pricing}`)
+   }
   return (
 
 <div className="card mb-3" style={{width:'100%'}}>
@@ -15,20 +19,7 @@ function ProductCard(props) {
         <h5><strong>{props.name}</strong></h5>
         <p>PartNo:<strong>{props.number}</strong></p> 
         <p><strong className="price">{props.pricing}</strong></p>
-        {/* <ul>
-        <li>
-           <strong>{props.name}</strong>
-        </li>
-        <li>
-          PartNo:<strong>{props.number}</strong> 
-        </li>
-        <li>
-          <strong className="price">{props.pricing}</strong>
-        </li>
-      </ul> */}
-       <button type="button" className="btn btn-warning">Add to Cart</button>
-       {/* <button onClick={props.onClick} className={`card-btn ${props["data-value"]}`} {...props} /> */}
-       {/* <button onClick={this.onButtonClick}>Add to Cart</button> */}
+       <button type="button" className="btn btn-warning" onClick={()=>handleClick()}>Add to Cart</button>
     </div>
    </div>
   </div>
